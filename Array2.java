@@ -3,6 +3,7 @@
 import java.util.*;
 import java.lang.*;
 import java.io.*;
+import javax.swing.*;
 
 /* Name of the class has to be "Main" only if the class is public. */
 class Ideone
@@ -13,18 +14,18 @@ class Ideone
 		{17,18,15,13,11,8,6,8,9,10,13,15},
 		{9,8,9,6,4,1,0,2,3,7,9,10},
 		{12,11,6,4,2,3,2,3,5,8}};
-		int Navg;
-		int Savg;
-		int Eavg;
-		int Wavg;
+		int Navg = 0;
+		int Savg = 0;
+		int Eavg = 0;
+		int Wavg = 0;
 		int min = 0;
 		int month = 0;
-		String dry;
+		String dry = "";
 
 		for (int i = 0; i < rainfall.length; ++i){
 			int x = 0;
 			for (int y : rainfall[i]){
-				x += y
+				x += y;
 			}
 			if (i==0){
 				Navg = (x/12);
@@ -43,7 +44,7 @@ class Ideone
 			int temp = rainfall[0][i] + rainfall[1][i] + rainfall[2][i] + rainfall [3][i];
 			if (temp < min){
 				min = temp;
-				month = i
+				month = i;
 			}
 		}
 		if (month == 0)
@@ -70,8 +71,8 @@ class Ideone
 			dry = "November";
 		if (month == 11)
 			dry = "December";
-		JOptionPane.showMessage(null,"Average Rainfall for each region \n\n North : "
+		JOptionPane.showMessageDialog(null,"Average Rainfall for each region \n\n North : "
 		+ Navg + "\n South : " + Savg + "\n East : " + Eavg + "\n West : "
-		+ Wavg + "\n\n Driest Month : " + dry)
+		+ Wavg + "\n\n Driest Month : " + dry);
 	}
 }
